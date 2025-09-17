@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐播放器</title>
+    <link rel="stylesheet" href="/static/css/music.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="/static/js/player.js"></script>
+</head>
+<body>
+<!-- 添加按钮容器 -->
+    <div class="control-buttons">
+        <a href="/admin" class="control-btn edit-btn">添加/编辑</a>
+        <a href="/logout" class="control-btn logout-btn">退出登录</a>
+    </div>
+    <div class="container">
+        <div class="music-player">
+            <div class="cover-container">
+                <img id="cover" src="" alt="专辑封面">
+                <div class="vinyl"></div>
+            </div>
+
+            <div class="song-info">
+                <h1 id="song-title">歌曲名称</h1>
+                <p id="artist">歌手</p>
+                <p id="album">专辑</p>
+            </div>
+
+            <div class="progress-container">
+                <span id="current-time">0:00</span>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                    <div class="progress-knob" id="progress-knob"></div>
+                </div>
+                <span id="duration">0:00</span>
+            </div>
+
+            <div class="controls">
+                <button id="prev-btn"><i class="fas fa-step-backward"></i></button>
+                <button id="play-btn"><i class="fas fa-play"></i></button>
+                <button id="next-btn"><i class="fas fa-step-forward"></i></button>
+            </div>
+
+            <div class="volume-control">
+                <i class="fas fa-volume-up"></i>
+                <input type="range" id="volume" min="0" max="1" step="0.01" value="0.7">
+            </div>
+        </div>
+
+        <!-- 新增曲库容器 -->
+        <div class="library-container">
+            <div class="library-header">
+                <h2>曲库</h2>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="搜索歌曲、歌手或专辑...">
+                </div>
+            </div>
+            <div class="library-list" id="library-list">
+                <!-- 曲库列表将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </div>
+
+
+    <audio id="audio"></audio>
+
+</body>
+</html>
